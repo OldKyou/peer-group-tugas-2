@@ -2,12 +2,12 @@
 using namespace std;
 
 int main() {
-    string tasks[10]; // can only hold 10 tasks
+    string tasks[10]; 
     int taskCount = 0;
     int choice;
 
     do {
-        cout << "\n--- SIMPLE TO-DO LIST ---\n";
+        cout << "\nList Tugas Simpel\n";
         cout << "1. Tambah tugas\n";
         cout << "2. Tunjukkan tugas\n";
         cout << "3. Keluar\n";
@@ -37,3 +37,4 @@ int main() {
 
     return 0;
 }
+

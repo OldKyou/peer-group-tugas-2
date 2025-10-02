@@ -2,33 +2,33 @@
 using namespace std;
 
 int main() {
-    string tasks[10]; // can only hold 10 tasks
+    string tasks[10]; 
     int taskCount = 0;
     int choice;
 
-    for (;;) { // infinite loop using for
-        cout << "\n--- SIMPLE TO-DO LIST ---\n";
-        cout << "1. Add Task\n";
-        cout << "2. Show Task\n";
-        cout << "3. Exit\n";
+    for (;;) { 
+        cout << "\nList Tugas Simpel\n";
+        cout << "1. Tambahkan Tugas\n";
+        cout << "2. Tunjukkan Tugas\n";
+        cout << "3. Keluar\n";
         cout << "Choose: ";
         cin >> choice;
 
         if (choice == 1) {
             if (taskCount < 10) {
-                cout << "Add Task: ";
+                cout << "Tambahkan Tugas: ";
                 cin.ignore();
                 getline(cin, tasks[taskCount]);
                 taskCount++;
             } else {
-                cout << "Task list is full!\n";
+                cout << "List sudah penuh!\n";
             }
         } 
         else {
             if (choice == 2) {
-                cout << "\nYour Task:\n";
+                cout << "\nTugasmu:\n";
                 if (taskCount == 0) {
-                    cout << "(No Task Yet)\n";
+                    cout << "(Belum ada tugas)\n";
                 } else {
                     for (int i = 0; i < taskCount; i++) {
                         cout << i+1 << ". " << tasks[i] << endl;
@@ -37,11 +37,11 @@ int main() {
             } 
             else {
                 if (choice == 3) {
-                    cout << "Exiting program...\n";
+                    cout << "Keluar dari program...\n";
                     break; // keluar loop
                 } 
                 else {
-                    cout << "Invalid choice!\n";
+                    cout << "Pilihan aneh!\n";
                 }
             }
         }
@@ -49,4 +49,5 @@ int main() {
 
     return 0;
 }
+
 

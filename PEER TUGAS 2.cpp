@@ -2,38 +2,50 @@
 using namespace std;
 
 int main() {
-    string tasks[10]; 
+    string tasks[10]; // can only hold 10 tasks
     int taskCount = 0;
     int choice;
 
-    do {
-        cout << "\nList Tugas Simpel\n";
-        cout << "1. Tambah tugas\n";
-        cout << "2. Tunjukkan tugas\n";
-        cout << "3. Keluar\n";
+    for (;;) { // infinite loop using for
+        cout << "\n--- SIMPLE TO-DO LIST ---\n";
+        cout << "1. Add Task\n";
+        cout << "2. Show Task\n";
+        cout << "3. Exit\n";
         cout << "Choose: ";
         cin >> choice;
 
         if (choice == 1) {
             if (taskCount < 10) {
-                cout << "Tambah tugas: ";
-                cin.ignore(); 
+                cout << "Add Task: ";
+                cin.ignore();
                 getline(cin, tasks[taskCount]);
                 taskCount++;
             } else {
-                cout << "List tugas sudah penuh!\n";
+                cout << "Task list is full!\n";
             }
         } 
-        else if (choice == 2) {
-            cout << "\nTugasmu:\n";
-            if (taskCount == 0) {
-                cout << "(Belum ada tugas)\n";
-            }
-            for (int i = 0; i < taskCount; i++) {
-                cout << i+1 << ". " << tasks[i] << endl;
+        else {
+            if (choice == 2) {
+                cout << "\nYour Task:\n";
+                if (taskCount == 0) {
+                    cout << "(No Task Yet)\n";
+                } else {
+                    for (int i = 0; i < taskCount; i++) {
+                        cout << i+1 << ". " << tasks[i] << endl;
+                    }
+                }
+            } 
+            else {
+                if (choice == 3) {
+                    cout << "Exiting program...\n";
+                    break; // keluar loop
+                } 
+                else {
+                    cout << "Invalid choice!\n";
+                }
             }
         }
-    } while (choice != 3);
+    }
 
     return 0;
 }
